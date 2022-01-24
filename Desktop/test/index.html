@@ -1,0 +1,197 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>Tarea 3: Testing</title>
+
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  
+</head>
+
+
+<body class="is-preload">
+     
+  
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Main -->
+  <div id="main">
+    <div class="inner">
+      
+      <!-- Header -->
+      <header id="header">
+	<a href="/" class="logo"><strong>IPM 2020/2021</strong> Práctica 1</a>
+	<ul class="icons">
+	  <li><a href="https://campusvirtual.udc.gal/course/view.php?id=14842" class="icon brands"><img src="../img/logo.png"/></a></li>
+	</ul>
+      </header>
+
+
+      <!-- Content -->
+<section>
+  <header class="main">
+    <h1>Tarea 3: Testing</h1>
+  </header>
+
+  <span class="image main"><img src="../img/automation.jpg" alt="" /></span>
+  
+  <p>En esta tarea tienes que escribir pruebas automatizadas <em>e2e</em> (<em>end to
+end</em>) para tu aplicación. Implementa las pruebas usando el api
+<a href="https://en.wikipedia.org/wiki/Assistive_Technology_Service_Provider_Interface"><em>AT-SPI</em></a>.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Si alguna
+de las pruebas detecta un error en la aplicación, no te olvides de
+corregirlo.</p>
+</blockquote>
+<p>Puedes usar una herramienta de ejecución de pruebas como <code>unittest</code> o
+<code>pytest</code>, o implementar las pruebas desde cero.</p>
+<p>Recuerda que una característica necesaria de una prueba es ser
+independiente. Eso quiere decir que cada prueba tiene que arrancar y
+terminar la aplicación, dejando el sistema en el estado en que estaba
+antes de la prueba.</p>
+<p>Otra característica necesaria de una prueba es ser válida para las
+futuras versiones de la aplicación. Como vimos en clase, eso quiere
+decir que tienes que evitar implementaciones como la siguiente:</p>
+<pre class="language-python"><code class="language-python">obj <span class="token operator">=</span> app<span class="token punctuation">.</span>get_child_at<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_child_at<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_child_at<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+<p>porque la prueba dejará de ser válida en cuanto cambie el
+diseño/implementación de la interface. Recuerda que ese cambio,
+probablemente, implica un cambio en el árbol de widgets.</p>
+<h2>Requisitos</h2>
+<p>Además de lo indicado en el apartado anterior y en las tareas
+anteriores, tienes que cumplir los siguientes requisitos:</p>
+<ul>
+<li>
+<p>Los resultados de esta tarea incluyen el
+código de las pruebas.</p>
+</li>
+<li>
+<p>Las pruebas con el comando <code>run-tests.sh</code>. P.e.:</p>
+<pre><code>$ ./run-tests.sh
+</code></pre>
+</li>
+<li>
+<p>Si se detecto algún error, la implementación está corregida.</p>
+</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>Las pruebas son completas</td>
+<td>Incluyen pruebas positivas y negativas</td>
+<td>Sólo se incluyen pruebas positivas</td>
+</tr>
+<tr>
+<td>Las pruebas son completas</td>
+<td>Se prueban todas las historias de usuaria indicadas</td>
+<td>No hay pruebas para alguna de las historias de usuaria</td>
+</tr>
+<tr>
+<td>Las pruebas son resistentes</td>
+<td>No inluyen código que se rompa con versiones posteriores de la interface</td>
+<td>El código es quebradizo y romperá cuando cambie el árbol de widgets de la interface</td>
+</tr>
+<tr>
+<td>Las pruebas usan el api adecuado</td>
+<td>Usan el api indicado en el enunciado (at-spi)</td>
+<td>Se usan otros api/herramientas para simular la interación de la usuaria</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Recuerda que el profesor sólo evaluará los ficheros que están en tu
+repositorio de <em>github classroom</em>. Es más seguro que tú también
+autoevalues tu trabajo sobre un <em>clone</em> de ese repositorio.</p>
+</blockquote>
+<h2>Recursos</h2>
+<p>Necesitas tener funcionando el <a href="https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/">servicio
+<em>AT-SPI</em></a> en
+tu S.O. La manera de conseguirlo dependerá de tu distribución. Por
+ejemplo, si estás usando <em>Gnome</em>, ya debería estar funcionando. Sino,
+por ejemplo en debian tendrías que instalar el paquete correspondiente:</p>
+<pre><code>$ sudo apt install at-spi2-core
+</code></pre>
+<p>También necesitarás usar el api de AT-SPI directamente desde
+python. Al igual que ocurre con <em>Gtk+</em>, lo más sencillo es usar
+<em>GObject Introspection</em> (<em>GI</em>). Para ellos necesitas el módulo de
+AT-SPI para GI y la libería GI para python. Por ejemplo en debian:</p>
+<pre><code>$ sudo apt install gir1.2-atspi-2.0 python3-gi
+</code></pre>
+<p>Puedes consultar la documentación del api de AT-SPI
+<a href="https://lazka.github.io/pgi-docs/Atspi-2.0/index.html">aquí</a>.</p>
+<p>Si no quieres usar directamente el api &quot;desnudo&quot; de AT-SPI, puedes
+usar una librería que proporcione una api de más alto nivel como:</p>
+<ul>
+<li>
+<p><a href="https://github.com/GNOME/pyatspi2">pyatpsi2</a>.
+Empaquetado en debian como <code>python3-pyatspi</code></p>
+</li>
+<li>
+<p><a href="https://ldtp.freedesktop.org/wiki/">ldtp</a></p>
+</li>
+<li>
+<p><a href="https://gitlab.com/dogtail/dogtail">dogtail</a>.
+Empaquetado en debian como <code>python3-dogtail</code></p>
+</li>
+<li>
+<p>La librería que usamos en clase: <a href="https://github.com/cabrero/ipm_e2e">ipm_e2e</a>.
+Disponible en <a href="https://pypi.org/project/ipm-e2e/0.0.1/">PyPI</a>.</p>
+<blockquote>
+<p>Si vas a instalar librerías desde PyPI, asegúrate primero de
+concocer el <a href="https://packaging.python.org/tutorials/installing-packages/">proceso y las distintas
+opciones</a>:
+global, user, virtual env</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="../tarea_4" class="button big">Siguiente: Tarea 4</a></p>
+
+  
+</section>
+	
+
+
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">&copy; David Cabrero. All rights reserved. Images: <a href="">unkown</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+</html>
