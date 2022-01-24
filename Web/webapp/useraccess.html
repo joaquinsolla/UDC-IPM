@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Rastreador - Accesos</title>
+    <meta name="description" content="IPM P3 - Web design">
+    <meta name="author" content="Joaquin, Alvaro & David">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="web_styles/mystyle.css">
+    <link rel="icon" type="image/x-icon" href="web_files/favicon.ico">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <!-- SCRIPTS -->
+    <script src="table_generator.js"></script>
+    <script src="close_session.js"></script>
+
+    <!-- BANNER -->
+    <picture>
+      <source media="(min-width: 1200px)" srcset="web_files/bannerHres.png" class="banner">
+      <img src="web_files/bannerLres.png" class="banner" alt="">
+    </picture>
+
+    <!-- MENU & USER DATA -->
+    <div class="row">
+      <!-- MENU BIG -->
+      <div class="actionmenubig">
+        <div>
+          <h2 style="text-align:left">Menú de acciones:</h2>
+        </div>
+        <div>
+          <form action="userdata.html">
+            <input type="submit" class="actionbutton" value="Información personal">
+          </form>
+        </div>
+        <div>
+          <form action="userqr.html">
+            <input type="submit" class="actionbutton" value="Mi QR">
+          </form>
+        </div>
+        <div>
+          <form action="useraccess.html">
+            <input type="submit" class="actionbutton selectedbutton" value="Accesos relevantes">
+          </form>
+        </div>
+        <div>
+          <form action="index.html">
+            <input type="submit" class="actionbutton" value="Cerrar sesión" onclick="close_session()">
+          </form>
+        </div>
+      </div>
+      <!-- USER DATA -->
+      <div class="actionresult">
+        <!-- MENU SMALL -->
+        <div class="actionmenusmall">
+          <div>
+            <h2>Menú de acciones:</h2>
+          </div>
+          <div>
+            <form action="userdata.html">
+              <input type="submit" class="actionbutton" value="Información personal">
+            </form>
+          </div>
+          <div>
+            <form action="userqr.html">
+              <input type="submit" class="actionbutton" value="Mi QR">
+            </form>
+          </div>
+          <div>
+            <form action="useraccess.html">
+              <input type="submit" class="actionbutton selectedbutton" value="Accesos relevantes">
+            </form>
+          </div>
+          <div>
+            <form action="index.html">
+              <input type="submit" class="actionbutton" value="Cerrar sesión" onclick="close_session()">
+            </form>
+          </div>
+        </div>
+        <!-- ACCESSES -->
+        <div class="actionresult">
+          <h2>Accesos relevantes:</h2>
+          <!-- NUMBER SELECTION -->
+          <form>
+            <label for="cellsN">Accesos a mostrar:</label>
+            <input type="number" id="cellsN" class="accessesinput" name="cellsN" min="1" max="50" step="5" value="6">
+            <input type="button" class="accessesbutton" value="Generar" onclick="access()">
+          </form>
+          <!-- TABLE GENERATION -->
+          <table id="mytable">
+            <script>generateTable()</script>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

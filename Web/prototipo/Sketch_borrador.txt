@@ -1,0 +1,40 @@
+VISTA 1 - Index
+---------------
+-Permite al usuario iniciar sesión.
+-Se pide su login y contraseña.
+
+ALERTA - Login
+--------------
+-Diálogo que se muestra si los datos
+ de inicio de sesión no son correctos.
+
+VISTA 2 - Registro
+------------------
+-La persona puede registrarse si aún
+ no figura en la bbdd.
+-Se solicita un nombre de usuario,
+ contraseña, nombre, apellidos y DNI.
+-Todos los campos son obligatorios.
+
+ALERTAS - Registro
+------------------
+-Diálogo que se muestra si algún campo
+ del formulario de registro está vacío
+ o tiene algún otro problema.
+-Se mostrará un diálogo diferente según
+ el problema ocurrido.
+
+VISTA 3 - Informacion personal
+------------------------------
+-Se muestra la información principal
+ del usuario.
+
+VISTA 4 - Mi QR
+---------------
+-Se muestra el código QR referente al
+ usuario y se muestra su contenido.
+
+VISTA 5 - Accesos relevantes
+----------------------------
+-Se muestran los accesos más relevantes
+ del usuario.

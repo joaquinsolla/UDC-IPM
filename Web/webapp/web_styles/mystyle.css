@@ -1,0 +1,261 @@
+/* COMMON - DEFAULT HTML OBJECTS */
+body {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  text-align: left;
+}
+
+fieldset{
+  border: 3px solid #b3b3b3;
+  width:300px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+legend{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+label{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+input{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 80%;
+}
+
+img{
+  width: 40%;
+  height: 40%;
+}
+
+canvas{
+  width: 30%;
+  height: 30%;
+}
+
+table{
+  width: 100%;
+}
+
+th, td{
+  text-align: left;
+}
+
+tr {
+  height: 25px;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+/* COMMON - CUSTOM HTML OBJECTS */
+.banner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 40%;
+}
+
+.animated_gif{
+  width: 45%;
+  height: auto;
+}
+
+.accessesinput{
+  width: 60px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.accessesbutton{
+  width: 80px;
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  background-color: dimgrey;
+  border-style: groove;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* FOR BIG DEVICES */
+h2{
+  text-align: left;
+}
+
+p{
+  text-align: left;
+  padding-left: 50px;
+}
+
+.row {
+  display: flex;
+  margin-top: 50px;
+}
+
+.mygif {
+  flex: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.myform {
+  flex: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.formbutton{
+  margin-top: 0;
+  margin-bottom: 10px;
+  background-color: #000033;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.actionmenubig{
+  flex: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.actionmenusmall{
+  flex: 0;
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.actionresult{
+  flex: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.actionbutton{
+  background-color: #4d4dff;
+  width: 50%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  font-weight: unset;
+}
+
+.selectedbutton{
+  background-color: #000033;
+      font-weight: bold;
+}
+
+.vl {
+  border-left: 2px solid lightgrey;
+  height: 450px;
+}
+
+
+/* FOR SMALL DEVICES */
+@media (max-width: 1200px) {
+
+  h2{
+    text-align: center;
+  }
+
+  p{
+    text-align: center;
+    padding-left: 10px;
+  }
+
+  .row {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .mygif {
+    flex: 0;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .myform {
+    flex: 100%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .formbutton{
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: #804d00;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .actionmenubig{
+    flex: 0;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .actionmenusmall{
+    display: block;
+    padding: 10px;
+    width:100%;
+    height: auto;
+  }
+
+  .actionresult{
+    flex: 100%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .actionbutton{
+    background-color: #ffad33;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-weight: unset;
+  }
+
+  .selectedbutton{
+    background-color: #804d00;
+        font-weight: bold;
+  }
+
+  .vl {
+    border-left: 0 solid lightgrey;
+    height: 0;
+  }
+
+}

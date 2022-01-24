@@ -1,0 +1,1 @@
+Ejecutar "index.html" para un uso correcto de la web.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Rastreador - Login</title>
+    <meta name="description" content="IPM P3 - Web design">
+    <meta name="author" content="Joaquin, Alvaro & David">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="web_styles/mystyle.css">
+    <link rel="icon" type="image/x-icon" href="web_files/favicon.ico">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <!-- SCRIPTS -->
+    <script src="check_login.js"></script>
+    <!-- BANNER -->
+    <picture>
+        <source media="(min-width: 1200px)" srcset="web_files/bannerHres.png" class="banner">
+        <img src="web_files/bannerLres.png" class="banner" alt="">
+    </picture>
+
+    <!-- GIF & LOGIN/REGISTER FORMS -->
+    <div class="row">
+      <!-- GIF -->
+      <div class="mygif">
+        <img src="web_files/mygif.png" alt="" class="animated_gif">
+      </div>
+      <!-- SEPARATOR -->
+      <div class="vl"></div>
+      <!-- LOGIN FORM -->
+      <div class="myform">
+        <form>
+          <fieldset>
+            <legend>Inicia sesión:</legend>
+            <label for="username">Usuario:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="button" class="formbutton" value="Entrar" onclick="login(username, password)">
+          </fieldset>
+        </form>
+      <!-- REGISTER FORM -->
+      <div class="myform">
+        <form action="register.html">
+          <fieldset>
+            <legend>Regístrate:</legend>
+            <input type="submit" class="formbutton" value="Registrarse">
+          </fieldset>
+        </form>
+      </div>
+      </div>
+    </div>
+
+  </body>
+</html>

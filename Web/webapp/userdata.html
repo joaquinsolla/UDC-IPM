@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Rastreador - Datos personales</title>
+    <meta name="description" content="IPM P3 - Web design">
+    <meta name="author" content="Joaquin, Alvaro & David">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="web_styles/mystyle.css">
+    <link rel="icon" type="image/x-icon" href="web_files/favicon.ico">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <!-- SCRIPTS -->
+    <script src="check_login.js"></script>
+    <script src="close_session.js"></script>
+
+    <!-- BANNER -->
+    <picture>
+      <source media="(min-width: 1200px)" srcset="web_files/bannerHres.png" class="banner">
+      <img src="web_files/bannerLres.png" class="banner" alt="">
+    </picture>
+
+    <!-- MENU & USER DATA -->
+    <div class="row">
+      <!-- MENU BIG -->
+      <div class="actionmenubig">
+        <div>
+          <h2>Menú de acciones:</h2>
+        </div>
+        <div>
+          <form action="userdata.html">
+            <input type="submit" class="actionbutton selectedbutton" value="Información personal">
+          </form>
+        </div>
+        <div>
+          <form action="userqr.html">
+            <input type="submit" class="actionbutton" value="Mi QR">
+          </form>
+        </div>
+        <div>
+          <form action="useraccess.html">
+            <input type="submit" class="actionbutton" value="Accesos relevantes">
+          </form>
+        </div>
+        <div>
+          <form action="index.html">
+            <input type="submit" class="actionbutton" value="Cerrar sesión" onclick="close_session()">
+          </form>
+        </div>
+      </div>
+      <!-- USER DATA -->
+      <div class="actionresult">
+        <!-- MENU SMALL -->
+        <div class="actionmenusmall">
+          <div>
+            <h2>Menú de acciones:</h2>
+          </div>
+          <div>
+            <form action="userdata.html">
+              <input type="submit" class="actionbutton selectedbutton" value="Información personal">
+            </form>
+          </div>
+          <div>
+            <form action="userqr.html">
+              <input type="submit" class="actionbutton" value="Mi QR">
+            </form>
+          </div>
+          <div>
+            <form action="useraccess.html">
+              <input type="submit" class="actionbutton" value="Accesos relevantes">
+            </form>
+          </div>
+          <div>
+            <form action="index.html">
+              <input type="submit" class="actionbutton" value="Cerrar sesión" onclick="close_session()">
+            </form>
+          </div>
+        </div>
+        <!-- DATA -->
+        <div class="actionresult">
+          <h2>Información personal:</h2>
+          <p id="email">Cargando email . . .</p>
+          <p id="name">Cargando nombre . . .</p>
+          <p id="surname">Cargando apellidos . . .</p>
+          <p id="uuid">Cargando UUID . . .</p>
+          <p id="phone">Cargando teléfono . . .</p>
+          <p id="is_vaccinated">Cargando Vacunado . . .</p>
+          <script>
+            //GET DATA
+            document.getElementById("email").innerHTML = "<b>Email: </b>" + localStorage.getItem('email');
+            document.getElementById("name").innerHTML = "<b>Nombre: </b>" + localStorage.getItem('names');
+            document.getElementById("surname").innerHTML = "<b>Apellidos: </b>" + localStorage.getItem('surname');
+            document.getElementById("uuid").innerHTML = "<b>UUID: </b>" + localStorage.getItem('uuid');
+            document.getElementById("phone").innerHTML = "<b>Teléfono: </b>" + localStorage.getItem('phone');
+            if(localStorage.getItem('vaccinated') === "true"){
+              document.getElementById("is_vaccinated").innerHTML = "<b>Vacunado: </b>Sí";
+            }else {
+              document.getElementById("is_vaccinated").innerHTML = "<b>Vacunado: </b>No";
+            }
+
+          </script>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

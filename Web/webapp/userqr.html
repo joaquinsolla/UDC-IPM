@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Rastreador - Mi QR</title>
+    <meta name="description" content="IPM P3 - Web design">
+    <meta name="author" content="Joaquin, Alvaro & David">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="web_styles/mystyle.css">
+    <link rel="icon" type="image/x-icon" href="web_files/favicon.ico">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <!-- SCRIPTS -->
+    <script src="close_session.js"></script>
+
+
+    <!-- BANNER -->
+    <picture>
+      <source media="(min-width: 1200px)" srcset="web_files/bannerHres.png" class="banner">
+      <img src="web_files/bannerLres.png" class="banner" alt="">
+    </picture>
+
+    <!-- MENU & USER DATA -->
+    <div class="row">
+      <!-- MENU BIG -->
+      <div class="actionmenubig">
+        <div>
+          <h2 style="text-align:left">Menú de acciones:</h2>
+        </div>
+        <div>
+          <form action="userdata.html">
+            <input type="submit" class="actionbutton" value="Información personal">
+          </form>
+        </div>
+        <div>
+          <form action="userqr.html">
+            <input type="submit" class="actionbutton selectedbutton" value="Mi QR">
+          </form>
+        </div>
+        <div>
+          <form action="useraccess.html">
+            <input type="submit" class="actionbutton" value="Accesos relevantes" >
+          </form>
+        </div>
+        <div>
+          <form action="index.html">
+            <input type="submit" class="actionbutton" value="Cerrar sesión" onclick="close_session()">
+          </form>
+        </div>
+      </div>
+      <!-- USER DATA -->
+      <div class="actionresult">
+        <!-- MENU SMALL -->
+        <div class="actionmenusmall">
+          <div>
+            <h2>Menú de acciones:</h2>
+          </div>
+          <div>
+            <form action="userdata.html">
+              <input type="submit" class="actionbutton" value="Información personal">
+            </form>
+          </div>
+          <div>
+            <form action="userqr.html">
+              <input type="submit" class="actionbutton selectedbutton" value="Mi QR">
+            </form>
+          </div>
+          <div>
+            <form action="useraccess.html">
+              <input type="submit" class="actionbutton" value="Accesos relevantes">
+            </form>
+          </div>
+          <div>
+            <form action="index.html">
+              <input type="submit" class="actionbutton" value="Cerrar sesión" onclick="close_session()">
+            </form>
+          </div>
+        </div>
+        <!-- QR -->
+        <div class="actionresult">
+          <h2>Contenido QR:</h2>
+          <p id="contenidoQR">Cargando contenido QR . . .</p>
+          <script>
+            let QRcontent = "{" + localStorage.getItem('names') + "},{" + localStorage.getItem('surname') +
+                    "},{" + localStorage.getItem('uuid') + "}";
+            document.getElementById("contenidoQR").innerHTML = QRcontent;
+          </script>
+          <!-- GENERAR QR -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+          <img src="" id="qrcode" alt="Código QR"/>
+          <script>
+            new QRious({element: document.getElementById("qrcode"), value: QRcontent});
+          </script>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
