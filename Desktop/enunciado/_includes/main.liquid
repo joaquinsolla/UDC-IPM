@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>{{ title }}</title>
+
+  <link href="{{page.url|baseUrl}}css/main.css" rel="stylesheet">
+  <link href="{{page.url|baseUrl}}css/prism.css" rel="stylesheet">
+  
+</head>
+
+
+<body class="is-preload">
+     
+  
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Main -->
+  <div id="main">
+    <div class="inner">
+      
+      <!-- Header -->
+      <header id="header">
+	<a href="/" class="logo"><strong>{{site.subject}}</strong> {{site.name}}</a>
+	<ul class="icons">
+	  <li><a href="{{site.subject_url}}" class="icon brands"><img src="{{page.url|baseUrl}}img/logo.png"/></a></li>
+	</ul>
+      </header>
+
+
+      {{ content }}
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">&copy; David Cabrero. All rights reserved. Images: <a href="{{banner.copy_url}}">{{banner.copy}}</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+</html>
