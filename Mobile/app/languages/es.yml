@@ -1,0 +1,90 @@
+menucontroller:
+  scanner: Escanear
+  registrar1: Registrar
+  registrar2: Manualmente
+  asistencia: Asistencia
+
+registerpage:
+  titulo: Registro Manual
+  tipo: Tipo
+  nombre: Nombre
+  hintnombre: Ex. Pilar
+  apellidos: Apellidos
+  hintapellidos: García
+  centro: Centro
+  fecha: Fecha
+  hintfecha: dd/mm/aaaa
+  hora: Hora
+  hinthora: hh:mm
+  temperatura: Temperatura
+  hinttemperatura: ºC
+  confirmar: Confirmar
+
+qr:
+  titulo: Datos QR
+  nombre: Nombre
+  apellidos: Apellidos
+  uuid: UUID
+  fecha: Fecha
+  hintfecha: dd/mm/aaaa
+  hora: Hora
+  hinthora: hh:mm
+  tipo: Tipo
+  centro: Centro
+  temperatura: Temperatura
+  hinttemperatura: ºC
+  modificar: Modificar
+  confirmar: Confirmar
+
+asistencia:
+  titulo: Asistencia
+  entradatitulo: Entradas
+  salidatitulo: Salidas
+  aforo: Aforo Actual
+  centro: Centro
+  fechainicial: Fecha Inicial de Búsqueda
+  hintfecha: dd/mm/aaaa
+  horainicial: Hora Inicial de Búsqueda
+  hinthora: hh:mm
+  fechafinal: Fecha Final de Búsqueda
+  horafinal: Hora Final de Búsqueda
+  inicial: Fecha Inicial
+  final: Fecha Final
+  buscar: Buscar
+  porcentajeocupacion: Porcentaje de Ocupación
+  personasdentro: Número de Personas Dentro
+  capacidadmaxima: Capacidad Máxima
+  nombre: Nombre
+  apellidos: Apellidos
+  uuid: UUID
+  telefono: Teléfono
+  email: Email
+  vacunado: Vacunado
+  temperatura: Temperatura
+  asistenciaentradas: Asistencia (Entradas)
+  asistenciasalidas: Asistencia (Salidas)
+  entradas: Nº Entradas
+  salidas: Nº Salidas
+  fechaentrada: Fecha de Entrada
+  fechasalida: Fecha de Salida
+
+infodialogos:
+  vaciotitulo: Campos vacíos
+  vacio: Algunos de los campos de registro están vacíos, rellénelos para poder continuar.
+  personatitulo: Persona no encontrada
+  persona: La persona introducida no existe en la base de datos.
+  formatofechatitulo: Formato de fecha/hora
+  formatofecha: El formato de la fecha/hora introducidas no es correcto.
+  formatofechaejemplo: "Formato: dd/mm/aaaa hh:mm"
+  temperaturatitulo: Formato de temperatura
+  temperatura: El formato de la temperatura introducida no es correcto. No debe ser menor a 30ºC ni mayor a 45ºC.
+  ordenfechatitulo: Orden de fechas
+  ordenfecha: La fecha inicial debe ser anterior a la final.
+  oktitulo: Completado
+  ok: El registro se ha completado de manera correcta.
+  boton: OK
+
+errordialogos:
+  conexiontitulo: Error de Conexión
+  conexion: No se pudo conectar con el servidor
+  boton: Inténtalo más tarde

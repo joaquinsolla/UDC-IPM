@@ -1,0 +1,91 @@
+menucontroller:
+  scanner: Scan
+  registrar1: Manual
+  registrar2: Regist
+  asistencia: Attendance
+
+registerpage:
+  titulo: Manual Regist
+  tipo: Type
+  nombre: Name
+  hintnombre: Ex. Harry
+  apellidos: Surname
+  hintapellidos: Ex. Smith
+  centro: Center
+  fecha: Date
+  hintfecha: mm/dd/aaaa
+  hora: Hour
+  hinthora: hh:mm
+  temperatura: Temperature
+  hinttemperatura: ºF
+  confirmar: Confirm
+
+qr:
+  titulo: QR Data
+  nombre: Name
+  apellidos: Surname
+  uuid: UUID
+  fecha: Date
+  hintfecha: mm/dd/aaaa
+  hora: Hour
+  hinthora: hh:mm
+  tipo: Type
+  centro: Center
+  temperatura: Temperature
+  hinttemperatura: ºF
+  modificar: Modify
+  confirmar: Confirm
+
+asistencia:
+  titulo: Attendance
+  entradatitulo: Entries
+  salidatitulo: Exits
+  aforo: Current Capacity
+  centro: Center
+
+  fechainicial: Search Start Date
+  hintfecha: mm/dd/aaaa
+  horainicial: Search Start Hour
+  hinthora: hh:mm
+  fechafinal: Search Final Date
+  horafinal: Search Final Hour
+  inicial: Start Date
+  final: Final Date
+  buscar: Search
+  porcentajeocupacion: Percentage of Occupation
+  personasdentro: Number of People Inside
+  capacidadmaxima: Maximum Capacity
+  nombre: Name
+  apellidos: Surname
+  uuid: UUID
+  telefono: Phone number
+  email: Email
+  vacunado: Vaccinated
+  temperatura: Temperature
+  asistenciaentradas: Attendance (Entries)
+  asistenciasalidas: Attendance (Exits)
+  entradas: Nº Entries
+  salidas: Nº Exits
+  fechaentrada: Entry Date
+  fechasalida: Exit Date
+
+infodialogos:
+  vaciotitulo: Empty fields
+  vacio: Some of the registration fields are empty, please fill them in to continue.
+  personatitulo: Person not found
+  persona: The person entered does not exist in the database.
+  formatofechatitulo: Date / time format
+  formatofecha: The format of the date / time entered is not correct.
+  formatofechaejemplo: "Format: mm/dd/aaaa hh:mm"
+  temperaturatitulo: Temperature format
+  temperatura: The entered temperature format is not correct. It should not be less than 86ºF nor greater than 113ºF.
+  ordenfechatitulo: Date order
+  ordenfecha: The start date must be before the end.
+  oktitulo: Completed
+  ok: Registration has been completed successfully.
+  boton: OK
+
+errordialogos:
+  conexiontitulo: Connection error
+  conexion: Could not connect to the server
+  boton: Try again later
