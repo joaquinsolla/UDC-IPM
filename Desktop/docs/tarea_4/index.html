@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>Tarea 4: Concurrencia</title>
+
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  
+</head>
+
+
+<body class="is-preload">
+     
+  
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Main -->
+  <div id="main">
+    <div class="inner">
+      
+      <!-- Header -->
+      <header id="header">
+	<a href="/" class="logo"><strong>IPM 2020/2021</strong> Práctica 1</a>
+	<ul class="icons">
+	  <li><a href="https://campusvirtual.udc.gal/course/view.php?id=14842" class="icon brands"><img src="../img/logo.png"/></a></li>
+	</ul>
+      </header>
+
+
+      <!-- Content -->
+<section>
+  <header class="main">
+    <h1>Tarea 4: Concurrencia</h1>
+  </header>
+
+  <span class="image main"><img src="../img/pexels-burak-kebapci-63505.jpg" alt="" /></span>
+  
+  <p>En esta tarea tienes añadir una característica <em>sine qua non</em> para
+completar el desarrollo de la aplicación: la interface de usuaria no
+se bloquea durante las operaciones de E/S.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Durante la
+realización de esta tendrás que modificar partes del diseño sw y del
+diseño de la interface. No te olvides de actualizar los ficheros
+correspondendientes.</p>
+</blockquote>
+<p>Recuerda que, tal y como explicamos en clase, para que la interface no
+se bloquee durante las operaciones de E/S, tienes que adaptar el
+código para que realize estas operaciones de forma concurrente.</p>
+<p>De la misma forma, tienes que incorporar los mecanismos de feedback,
+cancelación de operaciones, ... adecuados para este tipo de
+operaciones de E/S.</p>
+<p>Finalmente, escribie al menos un test que compruebe que,
+efectivamente, la interface no se bloquea durante las operaciones de
+E/S. Por ejemplo, puedes considerar los casos en que el servidor tarda
+mucho en responder o, simplemente, está caido.</p>
+<h2>Requisitos</h2>
+<p>Los requisitos son los mismos que en las tareas anteriores.</p>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>La interface no se bloqua durante la E/S</td>
+<td>La usuaria puede interactuar con la interface durante una operación de E/S</td>
+<td>La interface deja de responder durante la E/S</td>
+</tr>
+<tr>
+<td>El diseño de la interface está completo</td>
+<td>Incluyen los elementos añadidos en esta tarea</td>
+<td>No incluye todos los elementos añadidos</td>
+</tr>
+<tr>
+<td>El diseño sw está completo</td>
+<td>Incluyen diagramas para la operación concurrente</td>
+<td>No incluye la parte de concurrencia</td>
+</tr>
+<tr>
+<td>La interface es amigable</td>
+<td>Proporciona el feedback adecuado durante las operaciones de E/S</td>
+<td>No proporciona feedback</td>
+</tr>
+<tr>
+<td>Las pruebas son completas</td>
+<td>Incluyen pruebas para la operación concurrente</td>
+<td>No se prueba el no bloqueo de la interface</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Recuerda que el profesor sólo evaluará los ficheros que están en tu
+repositorio de <em>github classroom</em>. Es más seguro que tú también
+autoevalues tu trabajo sobre un <em>clone</em> de ese repositorio.</p>
+</blockquote>
+<h2>Recursos</h2>
+<ul>
+<li>
+<p>¿ Cómo comprobar si la interface sigue respondiendo ?</p>
+<p>Es sencillo, cuando no responde a los eventos de la usuaria tampoco
+responde a las peticiones por <code>at-spi</code>.  Así, por ejemplo, podemos
+escribir:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">step_la_interface_sigue_respondiendo</span><span class="token punctuation">(</span>app<span class="token punctuation">:</span> Atspi<span class="token punctuation">.</span>Object<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span><br>    <span class="token comment"># ELiminamos el timeout de arrancar la app</span><br>    atspi<span class="token punctuation">.</span>Atspi<span class="token punctuation">.</span>set_timeout<span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><br>    <span class="token keyword">assert</span> app<span class="token punctuation">.</span>get_name<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"La interface no responde"</span></code></pre>
+</li>
+</ul>
+
+  
+</section>
+	
+
+
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/autobus-blanco-y-negro-durante-el-dia-63505/">Burak Kebapci</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

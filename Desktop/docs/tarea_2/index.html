@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>Tarea 2: Diseño sw e implementación</title>
+
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  
+</head>
+
+
+<body class="is-preload">
+     
+  
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Main -->
+  <div id="main">
+    <div class="inner">
+      
+      <!-- Header -->
+      <header id="header">
+	<a href="/" class="logo"><strong>IPM 2020/2021</strong> Práctica 1</a>
+	<ul class="icons">
+	  <li><a href="https://campusvirtual.udc.gal/course/view.php?id=14842" class="icon brands"><img src="../img/logo.png"/></a></li>
+	</ul>
+      </header>
+
+
+      <!-- Content -->
+<section>
+  <header class="main">
+    <h1>Tarea 2: Diseño sw e implementación</h1>
+  </header>
+
+  <span class="image main"><img src="../img/pexels-thisisengineering-3861958.jpg" alt="" /></span>
+  
+  <p>En esta tarea tienes que realizar la parte central del desarrollo
+software: el diseño software y su implementación.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface. Si es el caso, no te
+olvides de actualizar los ficheros correspondendientes.</p>
+</blockquote>
+<p>No olvides basar tu diseño software en el patrón <em>MVC</em> (<em>Model View
+Controller</em>) en caulquiera de sus formas/variantes. Bajo ningún
+concepto puedes romper el principio fundamental de separar el modelo
+de la vista.</p>
+<p>Al contrario de lo que ocurre con el diseño de la interface, para el
+diseño sw sí que existe un estándar establecido: UML. Emplea este
+lenguaje para crear los diagramas tanto estáticos como
+dinámicos. Basándote en tu diseño sw, implementa la aplicación.</p>
+<p>No olvides que tu implementación no se limita al <em>happy path</em>, también
+tiene que gestionar los posibles errores. Por ejemplo, teniendo en
+cuenta que la aplicación tiene que conectarse con la BD, algunos
+errores esperables son:</p>
+<ul>
+<li>
+<p>No es posible conectarse con el servidor.</p>
+</li>
+<li>
+<p>El servidor no responde.</p>
+</li>
+<li>
+<p>El servidor devuelve un mensaje de error.</p>
+</li>
+</ul>
+<h2>Requisitos</h2>
+<p>Además de lo indicado en el apartado anterior y en las tareas
+anteriores, tienes que cumplir los siguientes requisitos:</p>
+<ul>
+<li>
+<p>Los resultados de esta tarea incluyen los diagramas UML y el
+código de la aplicación.</p>
+</li>
+<li>
+<p>Los diagramas siguen el estándar UML y se entregan, al menos, en
+formato pdf. Los diagramas pueden estar distribuidos en cualquier
+número de ficheros.</p>
+</li>
+<li>
+<p>La aplicación se lanza con el comando <code>ipm-p1.py</code>. P.e.:</p>
+<pre><code>$ ./imp-p1.py
+</code></pre>
+</li>
+<li>
+<p>El diseño de la interface está actualizado.</p>
+</li>
+<li>
+<p>Si usas librerías adicionales a Gtk+, incluye la información
+necesaria para su instalación.</p>
+</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>El diseño sw está bien expresado</td>
+<td>Se ajusta al estándar UML y cada artefacto se usa según su significado</td>
+<td>No sigue el estándar UML</td>
+</tr>
+<tr>
+<td>El diseño sw separa modelo e interface</td>
+<td>Aplica alguna de las variantes del MVC, o equivalente, para separar modelo e interface</td>
+<td>Existen dependencias entre el modelo y la interface</td>
+</tr>
+<tr>
+<td>El diseño sw incluye diagramas estáticos y dinámicos</td>
+<td>Existen diagramas tanto estáticos (p.e diagrama de clases) como dinámicos (p.e. diagrama de secuencia)</td>
+<td>Faltan los diagramas estáticos o los dinámicos</td>
+</tr>
+<tr>
+<td>El diseño sw es suficiente</td>
+<td>El diseño incluye todos los elementos necesarios para realizar la implementación</td>
+<td>La implementación incluye elementos que no se corresponden con el diseño sw</td>
+</tr>
+<tr>
+<td>La implementación sigue el diseño de la interface</td>
+<td>La interface de la aplicación implementada coincide con el diseño de la interface</td>
+<td>Existen discrepancias entre el diseño de la interface y la implementación</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los errores</td>
+<td>La aplicación captura los errores e informa convenientemente a la usuaria</td>
+<td>Los errores provoca mal funcionamiento de la aplicación, son ignorados o no se informa convenientemente a la usuaria</td>
+</tr>
+<tr>
+<td>La implementación es correcta</td>
+<td>Se ejecuta sin fallos en todos los casos</td>
+<td>La ejecución falla para algún caso</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Recuerda que el profesor sólo evaluará los ficheros que están en tu
+repositorio de <em>github classroom</em>. Es más seguro que tú también
+autoevalues tu trabajo sobre un <em>clone</em> de ese repositorio.</p>
+</blockquote>
+<h2>Recursos</h2>
+<p>Necesitas una instalación de
+<a href="https://www.python.org/"><code>python</code></a>. Normalmente tu S.O. o
+distribución ya tendrá una versión de python instalada por defecto.
+Simplemente asegurate de usar una versión reciente. Ahora mismo la
+última versión par es la <code>3.8</code>, y la impar la <code>3.9</code>.</p>
+<blockquote>
+<p>La siguiente versión <code>3.10</code> está en <em>release candidate</em> 1 desde el 3
+de agosto de 2021. No esperes que llegue una versión oficial antes
+de acabar la práctica.</p>
+</blockquote>
+<p>La librería gráfica que tienes que usar para la interface es <a href="https://www.gtk.org/">Gtk+
+3</a>. Lo normal es encontrarla empaquetada en casi
+cualquier distribución de linux, así que no deberías tener ningún
+problema para instalarla. Algunos escritorios como Gnome, Mate, LXDE,
+Xfce, ... están basados en Gtk+. Si estás usando alguno de esos
+escritorios, ya tendrás instaladas las librerías de Gtk+.</p>
+<blockquote>
+<p>La última versión mayor de Gtk+ es la 4. Sin embargo, muchas
+distribuciones todavía no lo empaquetan, por eso hemos decidido
+postponer su uso durante este curso.</p>
+</blockquote>
+<blockquote>
+<p>BTW, si estás buscando la documentación del api de Gtk+ en python,
+la tienes
+<a href="https://lazka.github.io/pgi-docs/Gtk-3.0/index.html">aquí</a></p>
+</blockquote>
+<p>A continuación necesitaras los
+<a href="https://en.wikipedia.org/wiki/Language_binding"><em>bindings</em></a>
+correspondientes para poder usar la librería Gtk+ desde tu código
+python. Lo más sencillo es usar el <a href="https://www.gtk.org/docs/language-bindings/">mecanismo
+oficial</a>: <em>GObject
+Introspection</em> (<em>GI</em>). Para ellos necesitas el módulo de Gtk+ para GI
+y la libería GI para python. De nuevo, lo habitual es que estén
+empaquetados en tu distribución de linux. Por ejemplo en debian:</p>
+<pre><code>$ sudo apt install gir1.2-gtk-3.0 python3-gi
+</code></pre>
+<p>Para generar los códigos QR, puedes usar la librería que consideres
+oportuna.  Por ejemplo
+<a href="https://github.com/lincolnloop/python-qrcode">python-qrcode</a> está
+escrita totalmente en python y está empaquetada en debian como
+<code>python3-qrcode</code>. Pero también hay otras como <code>python3-pyqrcode</code> o
+<code>python3-qrcodegen</code>.</p>
+<p>Por último, pero no menos importante, necesitas un despliegue del
+servidor y la base de datos del sistema. Durante la realización de la
+práctica, lo más conveniente es que uses tu propio despliegue. El
+<a href="https://github.com/nbarreira/ipm2122-server">repositorio del
+servidor</a> incluye toda la
+información que necesitas: instrucciones de instalación y ejecución, y
+documentación del api.</p>
+<p><a href="../tarea_3" class="button big">Siguiente: Tarea 3</a></p>
+
+  
+</section>
+	
+
+
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/mujer-codificacion-en-computadora-3861958/">ThisIsEngineering</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>¿ Cómo realizar la práctica ?</title>
+
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/prism.css" rel="stylesheet">
+  
+</head>
+
+
+<body class="is-preload">
+     
+  
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Main -->
+  <div id="main">
+    <div class="inner">
+      
+      <!-- Header -->
+      <header id="header">
+	<a href="/" class="logo"><strong>IPM 2020/2021</strong> Práctica 1</a>
+	<ul class="icons">
+	  <li><a href="https://campusvirtual.udc.gal/course/view.php?id=14842" class="icon brands"><img src="../img/logo.png"/></a></li>
+	</ul>
+      </header>
+
+
+      <!-- Content -->
+<section>
+  <header class="main">
+    <h1>¿ Cómo realizar la práctica ?</h1>
+  </header>
+
+  <span class="image main"><img src="..//img/pexels-christina-morillo-1181622.jpg" alt="" /></span>
+  
+  <h2>Objetivo</h2>
+<p>En esta práctica tienes que desarrollar una aplicación gráfica de
+escritorio, aplicando los conocimientos adquiridos sobre el desarrollo
+de interfaces gráficas de usuaria.</p>
+<h2>Metodología</h2>
+<p>La práctica se compone de una serie de tareas que tendrás que realizar
+en la secuencia indicada.</p>
+<p>Aunque la práctica está dividida en una secuencia de tareas, no hemos
+entrado en una máquina del tiempo para viajar a la prehistoria de la
+informática y usar una metodología <em>waterfall</em>. Durante la realización
+de cada una de las tareas es más que probable que tengamos que
+actualizar, corregir y/o mejorar algunos de los artefactos
+desarrollados en tareas previas.</p>
+<h2>Control de versiones</h2>
+<p>Usaremos un <a href="https://en.wikipedia.org/wiki/Version_control">control de
+versiones</a> durante todo
+el desarrollo de la práctica.</p>
+<p>Esto quiere decir que, en nuestro directorio de trabajo, de ninguna
+manera puede haber distintos ficheros con distintas versiones del
+mismo elemento.</p>
+<h2>Repositorio</h2>
+<p>Si estas leyendo esta documentación debería ser porque has creado el
+<em>assignment</em> correspondiente en <em>github classroom</em> y por tanto ya
+tienes el repositorio necesario para realizar la práctica. Si no es
+así, ve al campus virtual y, en la asignatura, sigue el enlace
+correspondiente.</p>
+<h2>Planificación</h2>
+<p>A <em>grosso modo</em> la práctica consta de cuatro tareas y tiene estimada
+una duración de cuatro semanas. Por tanto la primera aproximación es
+de una tarea por semana.</p>
+<p>Como parte de los aspectos que se valoran en la realización de la
+práctica se encuentra la capacidad para ajustarse a los plazos
+establecidos.</p>
+<p>Las tareas en que se estructura la práctica son las siguientes:</p>
+<ul>
+<li>Diseño de la interface</li>
+<li>Diseño software e implementación</li>
+<li>Testing</li>
+<li>Concurrencia</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Cada tarea incluye un apartado con una tabla de guía para la
+autoevaluación del trabajo que has realizado. Utiliza esas tablas para
+detectar las carencias y fortalezas de tu trabajo.</p>
+<p>Estas tablas no son excluyentes. Cada tarea puede incluir aspectos de
+las tareas anteriores. Por ejemplo, en la tarea 4, modificarás los
+diagramas UML de la tarea 2. Utiliza las tablas de las tareas
+anteriores para autoevaluar dichos aspectos.</p>
+<h2>Descripción de la aplicación</h2>
+<p>La aplicación que tienes que desarrollar forma parte de un sistema de
+control de accesos covid-19. El sistema consta de los siguientes
+contenedores:</p>
+<ul>
+<li>
+<p>Una B.D. donde se almacena información de las instalaciones,
+entidades, miembros de las entidades, fechas de acceso a las
+instalaciones, etc.</p>
+</li>
+<li>
+<p>Un servidor que proporciona acceso a la B.D. mediante un api tipo
+REST.</p>
+</li>
+<li>
+<p>Una aplicación web que permite a las usuarias del sistema las
+operaciones habituales de alta en el sistema, consulta y
+modificación de información personal, etc.</p>
+</li>
+<li>
+<p>Una aplicación móbil que permite el registro de los accesos a las
+instalaciones mediante códigos QR.</p>
+</li>
+<li>
+<p>La aplicación de escritorio que desarrollas en esta práctica.</p>
+</li>
+</ul>
+<p>La aplicación realiza consultas directamente a la B.D. y muestra los
+resultados, todo a través de una interface gráfica.</p>
+<h3>Usuaria objetivo</h3>
+<pre><code>Usuaria: IT admin novata.
+
+Una admin experta preferire usar las herramientas CLI y, cuando sea
+necesario, un poco de scripting. Pero los admins novatos se
+sienten más seguros con una herramienta con interface gráfica
+mientras no consoldian su experiencia. Podemos pensar que esta
+herramienta es análoga a los ruedines de una bicicleta.
+</code></pre>
+<h3>Requisitos no funcionales</h3>
+<pre><code>Plataforma de ejecución: linux + atspi
+
+Lenguaje de programación: python3
+
+Librería gráfica: Gtk+3
+
+Protocolo para testing: AT-SPI
+</code></pre>
+<h3>Requisitos funcionales</h3>
+<p>La aplicación incluye los siguientes casos de uso:</p>
+<pre><code>Ver información de una persona
+	Permite consultar la información personal: Nombre, Apellidos, Código QR, ... y
+	la información de sus accesos a las instalaciones (fecha, horas, tempertura, ...)
+	
+Rastrear altertas covid-19
+    Permite obtener la lista de personas que compartieron instalación con una determinada
+	persona en un período de tiempo (normalmente hasta la fecha actual).
+</code></pre>
+<p>Los códigos QR están asociados a una persona e incluyen la siguiente
+información: nombre, apellidos, uuid de su entrada en la BD.</p>
+<pre><code>La información incluida en el QR es común para todos los componentes del sistema.
+Es un string con el siguiente formato: &quot;{nombre},{apellidos},{uuid}&quot;
+</code></pre>
+<p><a href="../tarea_1" class="button big">Siguiente: Tarea 1</a></p>
+
+  
+</section>
+	
+
+
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/seis-mujeres-de-pie-y-sentadas-dentro-de-la-habitacion-1181622/">Christina Morillo</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+</html>
